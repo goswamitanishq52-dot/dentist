@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dentist Hospital</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #e0f7fa, #f8fafc);
+      color: #333;
+    }
+
+    header {
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+
+    header p {
+      color: #555;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 20px;
+      display: grid;
+      gap: 20px;
+    }
+
+    .card img {
+      width: 100%;
+      border-radius: 12px;
+      margin-bottom: 15px;
+      height: 220px;
+      object-fit: cover;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.7);
+      backdrop-filter: blur(10px);
+      padding: 20px;
+      border-radius: 16px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+      transition: 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    button {
+      background: #0ea5a4;
+      color: white;
+      border: none;
+      padding: 10px 18px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #0284c7;
+    }
+
+    input {
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      margin-top: 10px;
+      width: 100%;
+    }
+
+    .services li {
+      margin: 8px 0;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .services li:hover {
+      color: #0ea5a4;
+      transform: translateX(5px);
+    }
+
+    .success {
+      color: green;
+      margin-top: 10px;
+    }
+
+    .reviews {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+      gap: 15px;
+    }
+
+    .review-card {
+      background: white;
+      padding: 15px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+      text-align: center;
+    }
+
+    .review-card img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 10px;
+    }
+
+    .stars {
+      color: gold;
+      margin: 5px 0;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: #777;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1 id="hospitalName">SmileCare Dental</h1>
+  <p id="location">Your City</p>
+  <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5" style="width:90%;max-width:800px;border-radius:16px;margin-top:20px;" alt="Dentist">
+</header>
+
+<div class="container">
+
+  
+
+  <!-- ABOUT SECTION -->
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1588776814546-ec7e2c1c3a1b" alt="Dental Clinic">
+    <h2>About Our Hospital</h2>
+    <p>
+      Welcome to <b>SmileCare Dental</b>, where your smile is our priority. We are a modern dental clinic dedicated to providing high-quality care using advanced technology and gentle techniques.
+    </p>
+    <p>
+      Our team of experienced dentists ensures that every patient feels comfortable and confident during their treatment.
+    </p>
+    <p>
+      We believe in creating a friendly and stress-free environment so that even first-time patients feel relaxed.
+    </p>
+  </div>
+
+  <!-- SERVICES -->
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1606813907291-d86efa9b94db" alt="Dental Services">
+    <h2>Our Services</h2>
+    <ul class="services">
+      <li onclick="selectService(this)">Teeth Cleaning</li>
+      <li onclick="selectService(this)">Braces & Aligners</li>
+      <li onclick="selectService(this)">Root Canal</li>
+      <li onclick="selectService(this)">Tooth Extraction</li>
+    </ul>
+    <p id="selectedService"></p>
+  </div>
+
+  <!-- SURGERY IMAGE SECTION -->
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1609840114035-3c981b782dfe" alt="Dental Surgery">
+    <h2>Advanced Dental Surgery</h2>
+    <p>
+      We use modern equipment and safe surgical techniques to ensure painless and effective dental procedures.
+    </p>
+  </div>
+
+  
+
+  <!-- PATIENT REVIEWS -->
+  <div class="card">
+    <h2>Patient Reviews ⭐</h2>
+    <div class="reviews">
+
+      <div class="review-card">
+        <img src="https://images.unsplash.com/photo-1607746882042-944635dfe10e" alt="Patient">
+        <h4>Rahul Sharma</h4>
+        <div class="stars">★★★★★</div>
+        <p>Very smooth treatment. Doctor was friendly and professional.</p>
+      </div>
+
+      <div class="review-card">
+        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2" alt="Patient">
+        <h4>Pooja Verma</h4>
+        <div class="stars">★★★★★</div>
+        <p>Clinic is clean and modern. Highly recommended!</p>
+      </div>
+
+      <div class="review-card">
+        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e" alt="Patient">
+        <h4>Aman Singh</h4>
+        <div class="stars">★★★★☆</div>
+        <p>Great experience, painless treatment and good staff.</p>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <div style="max-width:1000px;margin:auto;">
+    <h3>Contact Us</h3>
+    <p>📞 Mobile: <a href="tel:+911234567890">+91 12345 67890</a></p>
+    <p>💬 WhatsApp: <a href="https://wa.me/911234567890" target="_blank">Chat on WhatsApp</a></p>
+    <p>📧 Email: <a href="mailto:smilecare@email.com">smilecare@email.com</a></p>
+    <p style="margin-top:10px;color:#aaa;">© 2026 SmileCare Dental</p>
+  </div>
+</footer>
+
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    // Ready state (no errors now)
+  });
+
+  function selectService(el) {
+    document.getElementById('selectedService').innerText = "Selected: " + el.innerText;
+  }
+</script>
+
+</body>
+</html>
